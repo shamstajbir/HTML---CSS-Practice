@@ -1,0 +1,38 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>This is a title</title>
+    </head>
+    <body>
+        <h1>This is a heading</h1>
+        <h2>This is 2nd heading</h2>
+   
+    <center>
+        <p align="left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <br>
+             <p align="left"> Aliquid dolore aliquam quam, quisquam dicta officia, incidunt
+              labore tempora, ratione laudantium nesciunt magnam sunt sit quo 
+              unde maiores optio?<hr> Earum magnam aliquid provident tempora 
+              eius nesciunt a quo cum minima dolorum! Cupiditate dolore 
+              reiciendis natus rem? Natus reprehenderit expedita ad dolore consectetur, accusantium, architecto maxime hic accusamus vitae nemo corporis tempore suscipit blanditiis. Placeat quidem quam reprehenderit enim esse excepturi mollitia facilis voluptatem magni laudantium corrupti pariatur asperiores odio alias officia, magnam eius delectus unde nesciunt error quibusdam! Debitis, unde accusantium minima error explicabo numquam similique quasi repudiandae blanditiis quo magni nobis recusandae odit eaque aliquid iste illum eius vel labore! Aspernatur perspiciatis sint voluptatem nihil ea, beatae earum sequi nesciunt recusandae illo adipisci iste exercitationem, molestiae quod nisi quis architecto eos ratione similique at temporibus vel, id consectetur ut? Odit tempora enim laboriosam pariatur deleniti. Eveniet, nisi labore? Labore ad recusandae tenetur itaque. Voluptatibus quod nam animi unde assumenda placeat commodi. Maxime tempora est hic amet veniam veritatis omnis quasi porro perspiciatis? Dolore beatae veniam animi velit debitis? Blanditiis animi ex ipsa unde magnam. In quas magnam reprehenderit corrupti, at vero, fuga perspiciatis fugiat neque consequatur voluptates modi consectetur hic?</p>
+    </center>
+    <a href="https://www.youtube.com/">This is a link</a> </a>
+    <ol>
+        <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li> <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li>
+        <li>Hi I am Tajbir</li> <li>Hi I am Tajbir</li>
+    </ol>
+    
+    
+
+
+
+
+    </body>
+    
+</html>

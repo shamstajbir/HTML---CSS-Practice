@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table</title>
+</head>
+<style>
+    table {
+        width:100;
+        border-collapse:collapse;
+        margin-bottom:10px;
+    }
+    td,th{
+        border:3px solid rgb(131, 43, 226);
+        padding:10px;
+        text-align:center;
+    }
+    th{
+        background-color: aquamarine;
+    }
+    td{
+        background-color: rgb(255, 0, 242);
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>USERNAME</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>TITLE</th>
+            <th>COMPANY</th>
+        </tr>
+        <tr>
+            <td>shamstajbir</td>
+            <td>Tonmoy</td>
+            <td>10TAKA</td>
+            <td>BE Developer</td>
+            <td>Edith </td>
+        </tr>
+        <tr>
+            <td rowspan="2">niloynill</td>
+            <td>Nill</td>
+            <td>5Taka</td>
+            <td>FE Developer</td>
+            <td>Edith</td>
+        </tr>
+        <tr>
+            
+            <td>Nill</td>
+            <td>5Taka</td>
+            <td>FE Developer</td>
+            <td>Edith</td>
+        </tr>
+    </table>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellat sit quaerat quas facere eaque rem obcaecati aspernatur labore? Molestias perferendis soluta beatae facilis cumque, dolor amet ad sunt ipsam.</p>
+
+</body>
+</html>
