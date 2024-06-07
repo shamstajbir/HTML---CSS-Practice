@@ -5,158 +5,107 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends JFrame implements ActionListener {
     private JTextField display;
-    private StringBuilder currentInput;
-    private double operand1, operand2, result;
+    private JPanel panel;
+    private StringBuilder input;
+    private double result;
     private String operator;
-    private boolean startNewInput;
 
     public Calculator() {
-        currentInput = new StringBuilder();
-          operand1 = operand2 = result = 0;
-           operator = "";
-          startNewInput = true;
+             input = new StringBuilder();
+         result = 0;
+            operator = "";
 
         
         setTitle("Calculator");
-         setSize(400, 500);
-           setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-               setLayout(new BorderLayout());
-
-      
-        display = new JTextField();
-           display.setFont(new Font("Arial", Font.BOLD, 24));
-         display.setHorizontalAlignment(SwingConstants.RIGHT);
-         display.setEditable(false);
-           add(display, BorderLayout.NORTH);
+        setSize(400, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
         
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(5, 4, 5, 5));
+        display = new JTextField();
+        display.setFont(new Font("Arial", Font.PLAIN, 24));
 
+        display.setHorizontalAlignment(JTextField.RIGHT);
+        display.setEditable(false);
+        add(display, BorderLayout.NORTH);
+
+        
+        panel = new JPanel();
+        panel.setLayout(new GridLayout(5, 4, 10, 10));
+
+        
         String[] buttonLabels = {
-            "7", "8", "9", "/",
-            "4", "5", "6", "*",
-            "1", "2", "3", "-",
-            "0", ".", "=", "+",
-            "C", "⌫", "√", "%"
-        };
+            "7", "8", "9", "/", 
+            "4", "5", "6", "*", 
+            "1", "2", "3", "-", 
+            "0", ".", "+", "=", 
+            "C", "←", "mod", "sqrt"};
 
         for (String label : buttonLabels) {
-            JButton button = new JButton(label);
-              button.setFont(new Font("Arial", Font.BOLD, 20));
+              JButton button = new JButton(label);
+            button.setFont(new Font("Arial", Font.PLAIN, 24));
                button.addActionListener(this);
-             panel.add(button);
-        }
+            panel.add(button);}
+        add(panel, BorderLayout.CENTER);
+         setVisible(true);}
 
-         add(panel, BorderLayout.CENTER);
-
-        
-          setVisible(true);
-    }
-
-    @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
 
         try {
-            if (command.equals("C")) {
-                clear();
-            } else if (command.equals("⌫")) {
-                backspace();
-            } else if (command.equals("=")) {
-                calculate();
-            } else if (command.equals("+") || command.equals("-") || command.equals("*") || 
-                       command.equals("/") || command.equals("%") || command.equals("√")) {
-                setOperator(command);
-            } else {
-                appendToInput(command);
-            }
-        } catch (ArithmeticException ex) {
-            display.setText("Error: " + ex.getMessage());
-            startNewInput = true;
-        } catch (Exception ex) {
-            display.setText("Error: Invalid input");
-            startNewInput = true;
-        }
-    }
+            switch (command) {
+                case "C":
+                    input.setLength(0);
+                    display.setText("");
+                     result = 0;
+                    operator = "";
+                    break;
+                case "←":
+                    if (input.length() > 0) {
+                        input.setLength(input.length() - 1);
+                        display.setText(input.toString());
+                    }
+                    break;
+                case "=":
+                    if (!input.toString().isEmpty() && !operator.isEmpty()) {
+                        result = calculate(result, Double.parseDouble(input.toString()), operator);
+                        display.setText(String.valueOf(result));
+                        input.setLength(0);
+                        operator = "";}
+                    break;
+                case "sqrt":
+                    if (!input.toString().isEmpty()) {
+                        result = Math.sqrt(Double.parseDouble(input.toString()));
+                        display.setText(String.valueOf(result));
+                        input.setLength(0);}
+                    break;
+                case "+", "-", "*", "/", "mod":
+                    if (!input.toString().isEmpty()) {
+                        result = Double.parseDouble(input.toString());
+                        operator = command;
+                        input.setLength(0);}
+                    break;
+                default:
+                    input.append(command);
+                    display.setText(input.toString());
+                    break;}} 
+                    catch (Exception ex) {
+            display.setText("Error");
+            input.setLength(0);
+            operator = "";}}
 
-    private void clear() 
-    {
-        currentInput.setLength(0);
-          operand1 = operand2 = result = 0;
-        operator = "";
-         display.setText("");
-        startNewInput = true;
-    }
-
-    private void backspace() 
-    {
-        if (currentInput.length() > 0) {
-            currentInput.setLength(currentInput.length() - 1);
-               display.setText(currentInput.toString());
-        }
-    }
-
-    private void appendToInput(String text)
-     {
-        if (startNewInput) {
-                 currentInput.setLength(0);
-             startNewInput = false;
-        }
-        currentInput.append(text);
-          display.setText(currentInput.toString());
-    }
-
-    private void setOperator(String op) {
-        if (currentInput.length() > 0) {
-             operand1 = Double.parseDouble(currentInput.toString());
-            operator = op;
-              currentInput.setLength(0);
-             display.setText("");
-        } else if (op.equals("√")) {
-             operand1 = 0;
-              operator = op;
-            calculate();
-        }
-    }
-
-    private void calculate() {
-        if (operator.isEmpty()) return;
-
-         if (currentInput.length() > 0) {
-            operand2 = Double.parseDouble(currentInput.toString());
-        }
-
-        switch (operator) {
-            case "+":
-                result = operand1 + operand2;
-                break;
-            case "-":
-                result = operand1 - operand2;
-                break;
-            case "*":
-                result = operand1 * operand2;
-                break;
-            case "/":
-                if (operand2 == 0) throw new ArithmeticException("Cannot divide by zero");
-                result = operand1 / operand2;
-                break;
-            case "%":
-                if (operand2 == 0) throw new ArithmeticException("Cannot divide by zero");
-                result = operand1 % operand2;
-                break;
-            case "√":
-                if (operand1 < 0) throw new ArithmeticException("Cannot take square root of negative number");
-                result = Math.sqrt(operand1);
-                break;
-        }
-
-        display.setText(String.valueOf(result));
-          startNewInput = true;
-           operator = "";
-    }
+    private double calculate(double a, double b, String operator) throws ArithmeticException {
+        return switch (operator) {
+            case "+" -> a + b;
+            case "-" -> a - b;
+            case "*" -> a * b;
+            case "/" -> {
+                if (b == 0) throw new ArithmeticException("Cannot divide by zero");
+                yield a / b;}
+            case "mod" -> a % b;
+            default -> throw new ArithmeticException("Unknown operator");};}
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(Calculator::new);
+        new Calculator();
     }
 }

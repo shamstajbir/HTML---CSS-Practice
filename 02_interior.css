@@ -1,0 +1,299 @@
+/* Importing the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Resetting default margins, padding and setting box-sizing to border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Defining CSS variables for color scheme */
+:root {
+  --ash-light: rgb(237, 239, 245);
+  --ash-dark: rgb(129, 126, 131);
+  --myorange: rgb(252, 35, 2);
+}
+
+/* Setting the body font to Roboto */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Setting the default font size for bold text */
+b {
+  font-size: 50px;
+}
+
+/* Styling for h1 headers */
+h1 {
+  font-size: 50px;
+  color: var(--myorange);
+  margin: 0px;
+}
+
+/* Styling for h3 headers */
+h3 {
+  padding: 5px;
+}
+
+/* Flex container for layout */
+.flex-container {
+  display: flex;
+}
+
+/* Styling for the left sidebar */
+.left-flex {
+  background-color: var(--myorange);
+  text-align: center;
+  color: white;
+  width: 18%;
+  padding-top: 50px;
+  padding-bottom: 460px;
+  position: fixed;
+}
+
+/* Link styling */
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hover effect for h3 elements inside the left sidebar */
+.left-flex ul li h3:hover {
+  transition: 0.3s;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+/* Hover effect for links inside the left sidebar */
+.left-flex ul a:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  color: black;
+}
+
+/* Styling for the main content area */
+.main-flex {
+  margin-left: 20%;
+  margin-right: 2%;
+  padding: 5px;
+}
+
+/* Styling for rows */
+.row {
+  display: flex;
+}
+
+/* Styling for columns */
+.col {
+  flex: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Styling for person columns */
+.col-person {
+  background-color: var(--ash-light);
+  flex: 33.33%;
+  padding: 5px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+/* Styling for person text */
+.person {
+  color: rgb(128, 123, 123);
+}
+
+/* Ensuring specific text colors */
+.heading,
+.num,
+.num2 {
+  color: black !important;
+}
+
+/* Styling for horizontal rules */
+hr {
+  width: 50px;
+  border: 5px solid var(--myorange);
+  float: left;
+  border-radius: 5px;
+  margin: 20px 20px 20px 0px;
+}
+
+/* Gap element */
+.gap {
+  height: 50px;
+}
+
+/* Package container styling */
+.package-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Package item styling */
+.package-item {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  min-width: 350px;
+  border-collapse: collapse;
+}
+
+/* Table cell styling */
+td {
+  background-color: var(--ash-light);
+  border-bottom: 1px solid var(--ash-dark);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Table header styling */
+th {
+  padding: 45px;
+  text-align: center;
+}
+
+/* Large font size for specific elements */
+.big-50 {
+  font-size: 45px;
+  color: rgb(128, 123, 123);
+}
+
+/* Wrapper styling */
+.wrapper {
+  color: rgb(128, 123, 123);
+}
+
+/* Room count styling */
+.room-cnt,
+.room-cnt2,
+.room {
+  font-size: 20px;
+}
+
+/* Calculator styling */
+#calc {
+  font-size: 40px;
+  color: rgb(128, 123, 123);
+}
+
+/* Span element styling */
+span {
+  color: rgb(128, 123, 123);
+}
+
+/* Styling for plus and minus elements */
+.plus,
+.minus,
+.plus2,
+.minus2 {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+/* Footer cell styling */
+.footer td {
+  padding-top: 40px;
+  border: none;
+}
+
+/* Basic package styling */
+.basic {
+  background-color: var(--ash-dark);
+  color: white;
+}
+
+/* Pro package styling */
+.pro {
+  background-color: var(--myorange);
+  color: white;
+}
+
+/* First signup button styling */
+.signup-button {
+  width: 110px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Second signup button styling */
+.signup-button-2 {
+  width: 110px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Hover effect for signup buttons */
+.signup-button:hover,
+.signup-button-2:hover {
+  transition: 0.3s;
+  background-color: var(--myorange);
+  color: rgb(255, 255, 255);
+}
+
+/* Styling for text and email inputs */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+}
+
+/* Styling for submit inputs */
+input[type="submit"] {
+  width: 100%;
+  background-color: var(--myorange);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer gap styling */
+.foot-gap {
+  background-color: var(--ash-light);
+  width: 100%;
+  padding: 60px;
+}
+
+/* Added animations for button selections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.left-flex ul li h3:hover,
+.left-flex ul a:hover {
+  animation: fadeIn 0.4s ease-in-out, scaleUp 0.3s ease-in-out;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Portfolio</title>
+    <link rel="stylesheet" href="01_portfolio.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Check out my work below</p>
+    </section>
+    
+    <section id="portfolio">
+        <h2>My Projects</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="portfolio.jpeg" alt="Project 1">
+                <div class="overlay">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://scontent.fjsr14-1.fna.fbcdn.net/v/t39.30808-6/438906228_2199943683693161_5543467281593490017_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHxk13S5BCTQoHHSVkY8rcTyMCp0MvnHpzIwKnQy-cenIfmG7IRYc253Mli_Y1jhCbN2Fn16mCTJlA08ghK0Q7t&_nc_ohc=aEz8rq4WBqwQ7kNvgFJShkI&_nc_ht=scontent.fjsr14-1.fna&oh=00_AYDMhFcy73XpIwi0NaCHUS5siHw0ALoIB2Cbw5YMsUGXZg&oe=665FE699" alt="Project 2">
+                <div class="overlay">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2</p>
+                </div>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <script src="01_portfolio.js"></script>
+</body>
+</html>
